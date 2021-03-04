@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
       - prod
 
 jobs:
@@ -56,7 +56,7 @@ jobs:
               exit 1
           fi
 
-          # Get branch name from github ref (i.e. refs/heads/master -> master)
+          # Get branch name from github ref (i.e. refs/heads/main -> main)
           gitBranch=${GITHUB_REF##*/}
 
           # Find the config associated to the firebase project in .firebaserc (falling back to default)
